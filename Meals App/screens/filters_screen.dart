@@ -15,7 +15,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     bool boolean,
     Function updateValue,
   ) {
-    return SwitchListTile(
+    return SwitchListTile.adaptive(
       title: Text(title),
       value: boolean,
       onChanged: updateValue,
