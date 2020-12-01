@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data.dart';
-import '../widgets/product_item.dart';
+import '../widgets/products_grid.dart';
 
 class ProductOverviewScreen extends StatelessWidget {
   @override
@@ -9,21 +8,7 @@ class ProductOverviewScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Shop App'),
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(10),
-        itemCount: allProducts.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
-        itemBuilder: (ctx, i) => ProductItem(
-          allProducts[i].id,
-          allProducts[i].title,
-          allProducts[i].imageURL,
-        ),
-      ),
+      body: ProductsGrid(),
     );
   }
 }
